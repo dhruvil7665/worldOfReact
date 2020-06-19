@@ -6,7 +6,7 @@ import {
 import './App.css';
 import HomePage from './pages/homepage';
 import AboutPage from './pages/AboutPage';
-import ArticleList from './pages/ArticleList';
+import ArticleListPage from './pages/ArticleListPage';
 import ArticlePage from './pages/ArticlePage';
 import NavBar from "./NavBar";
 
@@ -19,7 +19,7 @@ function App() {
       <div id="page-body">
      <Route path="/" component={HomePage} exact/>
      <Route path="/about" component={AboutPage} />
-     <Route path="/articles-list" component={ArticleList}/>
+     <Route path="/articles-list" component={ArticleListPage}/>
      <Route path="/articles/:name" component={ArticlePage} />
     </div>
     </div>
