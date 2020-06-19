@@ -1,15 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
+const ArticleList = ({articles}) => (
+    <> 
 
-const AboutPage = () => (
-    <React.Fragment> 
-    <h1>About US</h1>
-    <p>
-        welcome to my Blog!
-        This is a react website built on nodejs server
-        and mongoDB. It is hosted on AWS EC2 and in all a
-        complete full stack website.
-    </p></React.Fragment>
+    {articles.map((article,key)=>(
+        <Link className="article-list-item" key={key} to={`/articles/${article.name}`}>
+            
+            <h3 >{article.title}</h3>
+            <p>{article.content[0].substring(0,150)}....</p>
+            </Link>
+    ))};</>
 );
 
 export default ArticleList;
