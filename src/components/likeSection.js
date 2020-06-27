@@ -1,14 +1,21 @@
 import React from 'react';
 
-const likeSection=()=>{
+const likeSection=({articleName,upvotes,setArticleInfo})=>{
 
+    const upvoteArticle = async () => {
+       const result = await fetch(`/api/articles/${articleName}/upvote`,{
+            method:'post',
+        });
+        const body = await result.json();
+        setArticleInfo(body);
+    }
     return (
     <div id="upvotes-section">
-        <button onClick={}>Add Upvote</button>
-        <p>This post has been liked {articleInfo.upvotes} times</p>
+        <button onClick={()=>upvoteArticle()}>Add Upvote</button>
+        <p>This post has been liked {upvotes} times</p>
 
     </div>
-    )
+    );
 };
 
 export default likeSection;
